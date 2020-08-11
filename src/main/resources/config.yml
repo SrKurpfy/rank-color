@@ -1,0 +1,25 @@
+# Database credentials
+database:
+  url: 'jdbc:mysql://localhost:3306/database_name?characterEncoding=latin1'
+  username: root
+  password: ''
+
+# Inventory configuration
+inventory:
+  rows: 2
+  title: 'Colors'
+
+# Colors configuration
+colors:
+  red:
+    name: '&cRed'
+    addCommand: 'lp user {player} parent add {color}'
+    removeCommand: 'lp user {player} parent remove {color}'
+    slot: 1
+    materialData: 35;14
+  blue:
+    name: '&1Blue'
+    addCommand: 'lp user {player} parent add {color}'
+    removeCommand: 'lp user {player} parent remove {color}'
+    slot: 2
+    materialData: 35;11

@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id "com.github.johnrengelman.shadow" version "5.2.0"
+}
+
+group 'me.pltzz'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+
+    maven { url 'https://jitpack.io' }
+    maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots' }
+}
+
+dependencies {
+    implementation 'com.github.SaiintBrisson:db-utils:master-SNAPSHOT'
+    implementation 'com.github.SaiintBrisson:bukkit-boilerplate:da1c617464'
+    implementation 'com.github.SaiintBrisson:inventory-framework:3e3d5945b2'
+    implementation 'com.github.SaiintBrisson:command-framework:00b3bf0775'
+    implementation 'com.github.SaiintBrisson:error-reporter:master-SNAPSHOT'
+    implementation 'com.zaxxer:HikariCP:3.4.2'
+
+    compileOnly ('org.spigotmc:spigot-api:1.10-R0.1-SNAPSHOT') {
+        exclude group: 'net.md-5', module: 'bungeecord-chat'
+    }
+    compileOnly 'org.projectlombok:lombok:1.18.10'
+    annotationProcessor 'org.projectlombok:lombok:1.18.10'
+
+}
+
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
